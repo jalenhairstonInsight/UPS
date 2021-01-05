@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/git/POV/UPS/wsdl%20from%20UPS/RateWS.wsdl" uri="wsdl/RateWS.wsdl"/>
+    <system systemId="file:/C:/git/POV/UPS/wsdl%20from%20UPS/UPSSecurity.xsd" uri="wsdl/UPSSecurity.xsd"/>
+    <system systemId="file:/C:/git/POV/UPS/wsdl%20from%20UPS/Error1.1.xsd" uri="wsdl/Error1.1.xsd"/>
+    <system systemId="file:/C:/git/POV/UPS/wsdl%20from%20UPS/RateWebServiceSchema.xsd" uri="wsdl/RateWebServiceSchema.xsd"/>
+    <system systemId="file:/C:/git/POV/UPS/wsdl%20from%20UPS/common.xsd" uri="wsdl/common.xsd"/>
+</catalog>
