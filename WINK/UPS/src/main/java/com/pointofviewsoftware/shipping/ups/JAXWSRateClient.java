@@ -15,33 +15,15 @@
  */
 package com.pointofviewsoftware.shipping.ups;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Properties;
-
-import javax.xml.ws.BindingProvider;
-
 import com.ups.wsdl.xoltws.rate.v1.RateErrorMessage;
 import com.ups.wsdl.xoltws.rate.v1.RatePortType;
 import com.ups.wsdl.xoltws.rate.v1.RateService;
 import com.ups.xmlschema.xoltws.common.v1.RequestType;
-import com.ups.xmlschema.xoltws.rate.v1.AddressType;
-import com.ups.xmlschema.xoltws.rate.v1.CodeDescriptionType;
-import com.ups.xmlschema.xoltws.rate.v1.PackageType;
-import com.ups.xmlschema.xoltws.rate.v1.PackageWeightType;
-import com.ups.xmlschema.xoltws.rate.v1.RateRequest;
-import com.ups.xmlschema.xoltws.rate.v1.RateResponse;
-import com.ups.xmlschema.xoltws.rate.v1.RatedShipmentType;
-import com.ups.xmlschema.xoltws.rate.v1.ShipFromType;
-import com.ups.xmlschema.xoltws.rate.v1.ShipToAddressType;
-import com.ups.xmlschema.xoltws.rate.v1.ShipToType;
-import com.ups.xmlschema.xoltws.rate.v1.ShipmentType;
-import com.ups.xmlschema.xoltws.rate.v1.ShipperType;
+import com.ups.xmlschema.xoltws.rate.v1.*;
 import com.ups.xmlschema.xoltws.upss.v1.UPSSecurity;
+
+import javax.xml.ws.BindingProvider;
+import java.util.List;
 
 public class JAXWSRateClient {
 
