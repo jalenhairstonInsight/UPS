@@ -71,7 +71,7 @@ public class JAXWSRateClient {
                 String description = e.toString();
                 System.err.println(statusCode + " " + description);
             }
-            e.printStackTrace();
+             java.util.logging.Logger.getLogger(JAXWSRateClient.class.getName()).log(java.util.logging.Level.SEVERE,null,e);
         }
     }
 
