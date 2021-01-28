@@ -82,7 +82,7 @@ this.credentials = credentials;
                 String description = e.toString();
                 System.err.println(statusCode + " " + description);
             }
-            e.printStackTrace();
+             java.util.logging.Logger.getLogger(UPS.class.getName()).log(java.util.logging.Level.SEVERE,null,e);
             throw e;
         }
 
