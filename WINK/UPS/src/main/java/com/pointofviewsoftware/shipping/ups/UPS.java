@@ -54,11 +54,11 @@ this.credentials = credentials;
 
             String statusCode = rateResponse.getResponse().getResponseStatus().getCode();
             String description = rateResponse.getResponse().getResponseStatus().getDescription();
-            System.err.println(statusCode + " " + description);
+             java.util.logging.Logger.getLogger(UPS.class.getName()).log(java.util.logging.Level.INFO, statusCode + " " + description);
             List<Rate> result = new ArrayList<Rate>(rateResponse.getRatedShipment().size());
 
             for (RatedShipmentType r : rateResponse.getRatedShipment()) {
-                System.err.println(r.getService().getCode() + " " + r.getTotalCharges().getMonetaryValue() + " " + r.getTotalCharges().getCurrencyCode());
+                 java.util.logging.Logger.getLogger(UPS.class.getName()).log(java.util.logging.Level.INFO, r.getService().getCode() + " " + r.getTotalCharges().getMonetaryValue() + " " + r.getTotalCharges().getCurrencyCode());
                 Rate rate = new Rate();
                 rate.setMethod((Address.isNull(r.getService().getCode()) + " " + Address.isNull(r.getService().getDescription())).trim());
                 rate.setRate(Double.parseDouble(r.getTotalCharges().getMonetaryValue()));
@@ -76,13 +76,13 @@ this.credentials = credentials;
                 RateErrorMessage rateErrMsg = ((RateErrorMessage) e);
                 String statusCode = rateErrMsg.getFaultInfo().getErrorDetail().get(0).getPrimaryErrorCode().getCode();
                 String description = rateErrMsg.getFaultInfo().getErrorDetail().get(0).getPrimaryErrorCode().getDescription();
-                System.err.println(statusCode + " " + description);
+                 java.util.logging.Logger.getLogger(UPS.class.getName()).log(java.util.logging.Level.INFO, statusCode + " " + description);
             } else {
                 String statusCode = e.getMessage();
                 String description = e.toString();
-                System.err.println(statusCode + " " + description);
+                 java.util.logging.Logger.getLogger(UPS.class.getName()).log(java.util.logging.Level.INFO, statusCode + " " + description);
             }
-            e.printStackTrace();
+             java.util.logging.Logger.getLogger(UPS.class.getName()).log(java.util.logging.Level.SEVERE,null,e);
             throw e;
         }
 
