@@ -55,9 +55,9 @@ public class JAXWSRateClient {
 
             String statusCode = rateResponse.getResponse().getResponseStatus().getCode();
             String description = rateResponse.getResponse().getResponseStatus().getDescription();
-            System.err.println(statusCode + " " + description);
+             java.util.logging.Logger.getLogger(JAXWSRateClient.class.getName()).log(java.util.logging.Level.INFO, statusCode + " " + description);
             for (RatedShipmentType r : rateResponse.getRatedShipment()) {
-                System.err.println(r.getService().getCode() + " " + r.getTotalCharges().getMonetaryValue() + " " + r.getTotalCharges().getCurrencyCode());
+                 java.util.logging.Logger.getLogger(JAXWSRateClient.class.getName()).log(java.util.logging.Level.INFO, r.getService().getCode() + " " + r.getTotalCharges().getMonetaryValue() + " " + r.getTotalCharges().getCurrencyCode());
 
             }
         } catch (Exception e) {
@@ -65,11 +65,11 @@ public class JAXWSRateClient {
                 RateErrorMessage rateErrMsg = ((RateErrorMessage) e);
                 String statusCode = rateErrMsg.getFaultInfo().getErrorDetail().get(0).getPrimaryErrorCode().getCode();
                 String description = rateErrMsg.getFaultInfo().getErrorDetail().get(0).getPrimaryErrorCode().getDescription();
-                System.err.println(statusCode + " " + description);
+                 java.util.logging.Logger.getLogger(JAXWSRateClient.class.getName()).log(java.util.logging.Level.INFO, statusCode + " " + description);
             } else {
                 String statusCode = e.getMessage();
                 String description = e.toString();
-                System.err.println(statusCode + " " + description);
+                 java.util.logging.Logger.getLogger(JAXWSRateClient.class.getName()).log(java.util.logging.Level.INFO, statusCode + " " + description);
             }
              java.util.logging.Logger.getLogger(JAXWSRateClient.class.getName()).log(java.util.logging.Level.SEVERE,null,e);
         }
